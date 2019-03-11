@@ -43,7 +43,6 @@ int main()
         //incoming serial data
         if((Ir1>0.23)||(Ir2>0.23)) {
             if(mLeft>=mRight) {
- 
                 mleft.speed(mLeft);
                 mright.speed(0);
             } else {
@@ -51,7 +50,6 @@ int main()
                 mright.speed(mRight);
             }
         } else {
- 
             mleft.speed(mLeft);
             mright.speed(mRight);
         }
