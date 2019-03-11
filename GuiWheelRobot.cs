@@ -135,12 +135,6 @@ namespace WindowsFormsApplication3
             textBox2.Text = "Steering";
         }
  
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
- 
-        }
- 
- 
     }
  
 }
