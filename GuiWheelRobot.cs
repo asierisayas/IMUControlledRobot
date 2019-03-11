@@ -76,21 +76,21 @@ namespace WindowsFormsApplication3
                 mLeft = 10*zpos / (ypos);
             }
             //Format motor data into a 4 character string to be written out to robot
-            if ((mRight<10)&&(mLeft<10))
+            if (mRight<10 && mLeft<10)
             {
-                motors = ("0"+mLeft.ToString())  +"0"+ (mRight.ToString());
+                motors = "0"+mLeft.ToString()  +"0"+ mRight.ToString();
             }
             else if ((mRight < 10))
             {
-                motors = ( mLeft.ToString())  + "0" + (mRight.ToString());
+                motors = mLeft.ToString()  + "0" + mRight.ToString();
             }
-            else if ((mLeft < 10))
+            else if (mLeft < 10)
             {
-                motors = ("0" + mLeft.ToString()) +  (mRight.ToString());
+                motors = "0" + mLeft.ToString() +  mRight.ToString();
             }
             else
             {
-                motors = (mLeft.ToString()) +  (mRight.ToString());
+                motors = mLeft.ToString() +  mRight.ToString();
             }
             //Write out motor data to robot via Bleutooth
             serialPort2.Write(motors);
@@ -115,7 +115,7 @@ namespace WindowsFormsApplication3
             value = value+serialPort1.ReadExisting();
             if((value[value.Length-1])=='\n')
             {   //Throw out any "Bad" values, if serial data isn't sent received properly
-                if (((value.Length) > 16) && ((value.Length) < 23))
+                if ((value.Length > 16) && (value.Length < 23))
                 {
                     //If data is valid, IMU data will be updated. Otherwise previous value
                     //for IMU data will be used.
